@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import '../App.css';
 import './HeroSection.css';
 import { Button } from './Button.js';
+import FormCard from './FormCard'
 
 function HeroSection() {
     const [isIntroPlaying, setIsIntroPlaying] = useState(false); 
@@ -34,7 +35,7 @@ function HeroSection() {
         <div className="hero-container">
             <video 
                 ref={introVideoRef}
-                src="/videos/intro_mc.mp4" 
+                src="/videos/intro_mc_cut.mp4" 
                 onEnded={handleIntroEnd} 
                 style={{ 
                     display: 'block',
@@ -53,16 +54,22 @@ function HeroSection() {
                 }} 
                 preload="auto"
             />
-
-            <h1>RELOADED</h1>
-            <div className="hero-btns">
-                <Button 
-                    buttonStyle='btn--primary' 
-                    buttonSize='btn--large' 
-                    onClick={handleVideoChange}>
-                    Start
-                </Button>
-            </div>
+            {!videoStarted && (
+                <>
+                    <h1 className="hero-title">RELOADED</h1>
+                    <div className="hero-btns">
+                        <Button 
+                            buttonStyle='btn--outline' 
+                            buttonSize='btn--large' 
+                            onClick={handleVideoChange}>
+                            Start
+                        </Button>
+                    </div>
+                </>
+            )}
+            {videoStarted && (
+            <FormCard />
+            )}
         </div>
     );
 }

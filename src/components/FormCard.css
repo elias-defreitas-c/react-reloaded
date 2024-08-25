@@ -1,0 +1,11 @@
+.form-card {
+    background: transparent;
+  }
+  
+  .form-card > h1 {
+    text-align: center;
+    color: #1269cc;
+    font-size: 4vw;
+    margin-top: -20vh; 
+    margin-left: -73vw; 
+  }
