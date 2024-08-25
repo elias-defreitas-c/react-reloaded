@@ -8,4 +8,15 @@
     font-size: 4vw;
     margin-top: -20vh; 
     margin-left: -73vw; 
-  }
+    opacity: 0;
+    animation: easeInAnimation 3s forwards ease-in-out; 
+}
+
+@keyframes easeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

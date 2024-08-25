@@ -62,7 +62,7 @@ function HeroSection() {
                             buttonStyle='btn--outline' 
                             buttonSize='btn--large' 
                             onClick={handleVideoChange}>
-                            Start
+                            Play
                         </Button>
                     </div>
                 </>
