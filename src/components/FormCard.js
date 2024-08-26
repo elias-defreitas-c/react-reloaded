@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./FormCard.css";
+import randomQuestion from "./RandomQuestions";
 
 function FormCard() {
     const [inputValue, setInputValue] = useState(""); 
@@ -19,30 +20,21 @@ function FormCard() {
         }   
     };
 
-    const randomQuestion = () => {
-        const questions = [
-            {
-                English: "Working at Andeo is a great experience!",
-                German: "Bei Andeo zu arbeiten ist eine großartige",
-                Answer: "Erfahrung"
-            },
-            {
-                English: "The cake is a lie.",
-                German: "Der Kuchen ist eine",
-                Answer: "Lüge"
-            }
-        ];
-        return questions[Math.floor(Math.random() * questions.length)];
+    const normalize = (str) => {
+        return str
+            .toLowerCase() 
+            .replace(/[!?.,\s]/g, '') 
+            .trim(); 
     };
+
 
     const isCorrect = (question, input) => {
-        if (input.toLowerCase() === question.Answer.toLowerCase()) {
-            return true;
-        }
-        return false;
+        const normalizedInput = normalize(input);
+        const normalizedAnswer = normalize(question.Answer);
+        
+        return normalizedInput === normalizedAnswer;
     };
 
-    // Use useEffect to set a random question when the component mounts
     useEffect(() => {
         setCurrentQuestion(randomQuestion());
     }, []);
