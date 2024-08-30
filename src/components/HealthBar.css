@@ -1,0 +1,46 @@
+* {
+    background-color: transparent;
+}
+
+.healthbar-container {
+    margin-top: -45vh; 
+    width: 20vw; 
+    animation: easeInAnimation 3s forwards ease-in-out;
+    margin-left: 10vw; 
+}
+
+.statusbar-container {
+    width: 20vw; 
+    height: 2vh; 
+    background-color: #6d9ac7;
+    border: 1px solid white;
+    display: flex;
+    align-items: center; 
+}
+
+.statusbar {
+    background-color: #51eefc;
+    height: 100%;
+    width: 100%; 
+}
+
+.hp-title {
+    position: absolute;
+    font-size: 2vh; 
+    color: #1269cc; 
+    margin-left: 10vw; 
+    text-align: center;
+}
+
+
+@keyframes easeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+

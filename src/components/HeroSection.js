@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import '../App.css';
 import './HeroSection.css';
 import { Button } from './Button.js';
-import FormCard from './FormCard'
+import FormCard from './FormCard';
 
 function HeroSection() {
     const [isIntroPlaying, setIsIntroPlaying] = useState(false); 
     const [videoStarted, setVideoStarted] = useState(false); 
+
+
     const introVideoRef = useRef(null); 
     const idleVideoRef = useRef(null);  
 
@@ -68,7 +70,7 @@ function HeroSection() {
                 </>
             )}
             {videoStarted && (
-            <FormCard />
+                <FormCard />
             )}
         </div>
     );

@@ -1,0 +1,16 @@
+.score {
+    animation: easeInAnimation 3s forwards ease-in-out;
+    margin-top: -40vh;
+    margin-left: 10vw;
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+@keyframes easeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
